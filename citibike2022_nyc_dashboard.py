@@ -28,9 +28,9 @@ page = st.sidebar.selectbox('Select an aspect of the analysis',
 # Define base directory for all tables & figures
 # ---------------------------------------------------------
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-TABLE_DIR = os.path.join(BASE_DIR, "Tables and Figures")
-FIG_DIR = os.path.join(BASE_DIR, "Tables and Figures")
-HTML_DIR = os.path.join(BASE_DIR, "Tables and Figures")
+TABLE_DIR = os.path.join(BASE_DIR, "Figures_Tables")
+FIG_DIR = os.path.join(BASE_DIR, "Figures_Tables")
+HTML_DIR = os.path.join(BASE_DIR, "Figures_Tables")
 
 
 ########################## Import data ###########################################################################################
