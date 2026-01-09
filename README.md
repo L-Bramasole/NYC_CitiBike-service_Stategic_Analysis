@@ -87,7 +87,7 @@ To launch the interactive Streamlit dashboard:
 
 ```bash
 pip install -r requirements.txt
-streamlit run Notebooks/CitiBike2022_NewYork_dashboard_L-Bramasole.py
+streamlit run citibike2022_nyc_dashboard.py
 ```
 
 # ⭐ Results Highlights  
