@@ -41,7 +41,7 @@ HTML_DIR = os.path.join(BASE_DIR, "Figures_Tables")
 
 ########################## Import data ###########################################################################################
 Top20_start_stations = pd.read_csv(os.path.join(TABLE_DIR, "Top20_start_stations.csv"))
-top20_trips = pd.read_csv(os.path.join(TABLE_DIR, "Top20_trips.csv"))
+top20_trips = pd.read_csv(os.path.join(TABLE_DIR, "top20_trips.csv"))
 rides_temp = pd.read_csv(os.path.join(TABLE_DIR, "citybike2022_weather.csv"))
 weekday_top20 = pd.read_csv(os.path.join(TABLE_DIR, "weekday_top20_stations.csv"), index_col=0)
 weekday_hour = pd.read_csv(os.path.join(TABLE_DIR, "weekday_hour_rides.csv"), index_col=0)
