@@ -1,3 +1,9 @@
+############### test#######
+import os
+
+print(">>> CURRENT FILE:", __file__)
+print(">>> BASE_DIR:", os.path.dirname(os.path.abspath(__file__)))
+print(">>> DIR CONTENTS:", os.listdir(os.path.dirname(os.path.abspath(__file__))))
 ################################################ Citi Bikes DASHABOARD #####################################################
 
 import streamlit as st
