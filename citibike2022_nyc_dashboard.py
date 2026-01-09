@@ -306,7 +306,7 @@ else:
     
     st.header("Recommendations")
 
-    Image2 = Image.open("Tables and Figures/citi-bike.jpg")  # source: https://inhabitat.com/citi-bike-share-program-launches-in-new-york-with-6000-bikes/
+    Image2 = Image.open("Figures_Tables/citi-bike.jpg")  # source: https://inhabitat.com/citi-bike-share-program-launches-in-new-york-with-6000-bikes/
     st.image(Image2)
 
     st.markdown("## 🛠 Action Plan: Fleet & Station Optimization")
