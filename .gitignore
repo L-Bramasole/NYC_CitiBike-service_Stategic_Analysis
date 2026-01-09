@@ -1,0 +1,6 @@
+.ipynb_checkpoint/.
+.virtual_documents/
+.env
+Tables and Figures/*.csv
+Tables and Figures/Trips_df.csv
+Tables and Figures/duration_hist.csv
