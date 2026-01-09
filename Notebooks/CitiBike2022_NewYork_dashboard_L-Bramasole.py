@@ -6,7 +6,6 @@ import numpy as np
 from plotly.subplots import make_subplots
 import plotly.graph_objects as go
 import matplotlib.pyplot as plts
-import ipywidgets as widgets
 from numerize.numerize import numerize
 from PIL import Image
 import os
