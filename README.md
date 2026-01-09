@@ -72,6 +72,7 @@ Note: Due to big size of the original dataset, it is not uploaded into this repo
 ---
 
 ## 📊 Dashboard Structure  
+https://nyccitibike-servicestategicanalysis-k3ljnwx4lcafyy7nnbvemz.streamlit.app
 
 The interactive dashboard is divided into **four sections**, each answering a core operational question:
 
