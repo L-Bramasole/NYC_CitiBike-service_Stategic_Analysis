@@ -1,0 +1,21 @@
+start_station_name,start_lat,start_lng,end_station_name,end_lat,end_lng,trip_count,route
+Central Park S & 6 Ave,40.76590936,-73.97634151,Central Park S & 6 Ave,40.76590936,-73.97634151,10658,Central Park S & 6 Ave → Central Park S & 6 Ave
+Roosevelt Island Tramway,40.757284,-73.9536,Roosevelt Island Tramway,40.757284,-73.9536,7862,Roosevelt Island Tramway → Roosevelt Island Tramway
+7 Ave & Central Park South,40.7667405590595,-73.9790689945221,7 Ave & Central Park South,40.7667405590595,-73.9790689945221,7378,7 Ave & Central Park South → 7 Ave & Central Park South
+Soissons Landing,40.69231660719192,-74.01486575603485,Soissons Landing,40.69231660719192,-74.01486575603485,6731,Soissons Landing → Soissons Landing
+W 21 St & 6 Ave,40.74173969,-73.99415556,9 Ave & W 22 St,40.7454973,-74.00197139,5987,W 21 St & 6 Ave → 9 Ave & W 22 St
+Grand Army Plaza & Central Park S,40.7643971,-73.97371465,Grand Army Plaza & Central Park S,40.7643971,-73.97371465,5858,Grand Army Plaza & Central Park S → Grand Army Plaza & Central Park S
+1 Ave & E 62 St,40.7612274,-73.96094022,1 Ave & E 68 St,40.76500525,-73.95818491,5479,1 Ave & E 62 St → 1 Ave & E 68 St
+5 Ave & E 72 St,40.77282817,-73.96685276,5 Ave & E 72 St,40.77282817,-73.96685276,5318,5 Ave & E 72 St → 5 Ave & E 72 St
+12 Ave & W 40 St,40.76087502,-74.00277668,12 Ave & W 40 St,40.76087502,-74.00277668,4979,12 Ave & W 40 St → 12 Ave & W 40 St
+Yankee Ferry Terminal,40.68706579875912,-74.01675585121666,Yankee Ferry Terminal,40.68706579875912,-74.01675585121666,4846,Yankee Ferry Terminal → Yankee Ferry Terminal
+Broadway & W 58 St,40.76695317,-73.98169333,Broadway & W 58 St,40.76695317,-73.98169333,4782,Broadway & W 58 St → Broadway & W 58 St
+Central Park West & W 72 St,40.77579376683666,-73.9762057363987,Central Park West & W 72 St,40.77579376683666,-73.9762057363987,4741,Central Park West & W 72 St → Central Park West & W 72 St
+Norfolk St & Broome St,40.7172274,-73.98802084,Henry St & Grand St,40.714211,-73.981095,4489,Norfolk St & Broome St → Henry St & Grand St
+West St & Chambers St,40.71754834,-74.01322069,West St & Chambers St,40.71754834,-74.01322069,4413,West St & Chambers St → West St & Chambers St
+West St & Chambers St,40.71754834,-74.01322069,Pier 40 - Hudson River Park,40.7277140777778,-74.01129573583603,4411,West St & Chambers St → Pier 40 - Hudson River Park
+North Moore St & Greenwich St,40.72019521437465,-74.0103006362915,Vesey St & Church St,40.71221958009051,-74.01047229766846,4405,North Moore St & Greenwich St → Vesey St & Church St
+W 21 St & 6 Ave,40.74173969,-73.99415556,W 22 St & 10 Ave,40.74691959,-74.00451887,4052,W 21 St & 6 Ave → W 22 St & 10 Ave
+Central Park North & Adam Clayton Powell Blvd,40.799484,-73.955613,Central Park North & Adam Clayton Powell Blvd,40.799484,-73.955613,4049,Central Park North & Adam Clayton Powell Blvd → Central Park North & Adam Clayton Powell Blvd
+Yankee Ferry Terminal,40.68706579875912,-74.01675585121666,Soissons Landing,40.69231660719192,-74.01486575603485,4006,Yankee Ferry Terminal → Soissons Landing
+Pier 40 - Hudson River Park,40.7277140777778,-74.01129573583603,West St & Chambers St,40.71754834,-74.01322069,4004,Pier 40 - Hudson River Park → West St & Chambers St

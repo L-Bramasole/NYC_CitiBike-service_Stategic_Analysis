@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <title>pydeck</title>
+        <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v1.13.0/mapbox-gl.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" />
+    <script src='https://cdn.jsdelivr.net/npm/@deck.gl/jupyter-widget@~9.0.*/dist/index.js'></script>
+    <style>
+    body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+#deck-container {
+  width: 100vw;
+  height: 100vh;
+}
+
+#deck-container canvas {
+  z-index: 1;
+  background: none;
+}
+    </style>
+  </head>
+  <body>
+    <div id="deck-container">
+    </div>
+  </body>
+  <script>
+    const container = document.getElementById('deck-container');
+    const jsonInput = {
+  "initialViewState": {
+    "latitude": 40.74223672318528,
+    "longitude": -73.98513474283283,
+    "pitch": 45,
+    "zoom": 12.0
+  },
+  "layers": [
+    {
+      "@@type": "ArcLayer",
+      "autoHighlight": true,
+      "data": [
+        {
+          "end_coords": [
+            -73.97634151,
+            40.76590936
+          ],
+          "end_lat": 40.76590936,
+          "end_lng": -73.97634151,
+          "end_station_name": "Central Park S & 6 Ave",
+          "line_width": 10.0,
+          "start_coords": [
+            -73.97634151,
+            40.76590936
+          ],
+          "start_lat": 40.76590936,
+          "start_lng": -73.97634151,
+          "start_station_name": "Central Park S & 6 Ave",
+          "trip_count": 10658
+        },
+        {
+          "end_coords": [
+            -73.9536,
+            40.757284
+          ],
+          "end_lat": 40.757284,
+          "end_lng": -73.9536,
+          "end_station_name": "Roosevelt Island Tramway",
+          "line_width": 7.376618502533309,
+          "start_coords": [
+            -73.9536,
+            40.757284
+          ],
+          "start_lat": 40.757284,
+          "start_lng": -73.9536,
+          "start_station_name": "Roosevelt Island Tramway",
+          "trip_count": 7862
+        },
+        {
+          "end_coords": [
+            -73.9790689945221,
+            40.7667405590595
+          ],
+          "end_lat": 40.7667405590595,
+          "end_lng": -73.9790689945221,
+          "end_station_name": "7 Ave & Central Park South",
+          "line_width": 6.922499530868831,
+          "start_coords": [
+            -73.9790689945221,
+            40.7667405590595
+          ],
+          "start_lat": 40.7667405590595,
+          "start_lng": -73.9790689945221,
+          "start_station_name": "7 Ave & Central Park South",
+          "trip_count": 7378
+        },
+        {
+          "end_coords": [
+            -74.01486575603485,
+            40.69231660719192
+          ],
+          "end_lat": 40.69231660719192,
+          "end_lng": -74.01486575603485,
+          "end_station_name": "Soissons Landing",
+          "line_width": 6.315443798085944,
+          "start_coords": [
+            -74.01486575603485,
+            40.69231660719192
+          ],
+          "start_lat": 40.69231660719192,
+          "start_lng": -74.01486575603485,
+          "start_station_name": "Soissons Landing",
+          "trip_count": 6731
+        },
+        {
+          "end_coords": [
+            -74.00197139,
+            40.7454973
+          ],
+          "end_lat": 40.7454973,
+          "end_lng": -74.00197139,
+          "end_station_name": "9 Ave & W 22 St",
+          "line_width": 5.617376618502533,
+          "start_coords": [
+            -73.99415556,
+            40.74173969
+          ],
+          "start_lat": 40.74173969,
+          "start_lng": -73.99415556,
+          "start_station_name": "W 21 St & 6 Ave",
+          "trip_count": 5987
+        },
+        {
+          "end_coords": [
+            -73.97371465,
+            40.7643971
+          ],
+          "end_lat": 40.7643971,
+          "end_lng": -73.97371465,
+          "end_station_name": "Grand Army Plaza & Central Park S",
+          "line_width": 5.496340776881215,
+          "start_coords": [
+            -73.97371465,
+            40.7643971
+          ],
+          "start_lat": 40.7643971,
+          "start_lng": -73.97371465,
+          "start_station_name": "Grand Army Plaza & Central Park S",
+          "trip_count": 5858
+        },
+        {
+          "end_coords": [
+            -73.95818491,
+            40.76500525
+          ],
+          "end_lat": 40.76500525,
+          "end_lng": -73.95818491,
+          "end_station_name": "1 Ave & E 68 St",
+          "line_width": 5.140739350722462,
+          "start_coords": [
+            -73.96094022,
+            40.7612274
+          ],
+          "start_lat": 40.7612274,
+          "start_lng": -73.96094022,
+          "start_station_name": "1 Ave & E 62 St",
+          "trip_count": 5479
+        },
+        {
+          "end_coords": [
+            -73.96685276,
+            40.77282817
+          ],
+          "end_lat": 40.77282817,
+          "end_lng": -73.96685276,
+          "end_station_name": "5 Ave & E 72 St",
+          "line_width": 4.989679114280353,
+          "start_coords": [
+            -73.96685276,
+            40.77282817
+          ],
+          "start_lat": 40.77282817,
+          "start_lng": -73.96685276,
+          "start_station_name": "5 Ave & E 72 St",
+          "trip_count": 5318
+        },
+        {
+          "end_coords": [
+            -74.00277668,
+            40.76087502
+          ],
+          "end_lat": 40.76087502,
+          "end_lng": -74.00277668,
+          "end_station_name": "12 Ave & W 40 St",
+          "line_width": 4.6716081816475885,
+          "start_coords": [
+            -74.00277668,
+            40.76087502
+          ],
+          "start_lat": 40.76087502,
+          "start_lng": -74.00277668,
+          "start_station_name": "12 Ave & W 40 St",
+          "trip_count": 4979
+        },
+        {
+          "end_coords": [
+            -74.01675585121666,
+            40.68706579875912
+          ],
+          "end_lat": 40.68706579875912,
+          "end_lng": -74.01675585121666,
+          "end_station_name": "Yankee Ferry Terminal",
+          "line_width": 4.546819290673673,
+          "start_coords": [
+            -74.01675585121666,
+            40.68706579875912
+          ],
+          "start_lat": 40.68706579875912,
+          "start_lng": -74.01675585121666,
+          "start_station_name": "Yankee Ferry Terminal",
+          "trip_count": 4846
+        },
+        {
+          "end_coords": [
+            -73.98169333,
+            40.76695317
+          ],
+          "end_lat": 40.76695317,
+          "end_lng": -73.98169333,
+          "end_station_name": "Broadway & W 58 St",
+          "line_width": 4.486770501032089,
+          "start_coords": [
+            -73.98169333,
+            40.76695317
+          ],
+          "start_lat": 40.76695317,
+          "start_lng": -73.98169333,
+          "start_station_name": "Broadway & W 58 St",
+          "trip_count": 4782
+        },
+        {
+          "end_coords": [
+            -73.9762057363987,
+            40.77579376683666
+          ],
+          "end_lat": 40.77579376683666,
+          "end_lng": -73.9762057363987,
+          "end_station_name": "Central Park West & W 72 St",
+          "line_width": 4.448301745167949,
+          "start_coords": [
+            -73.9762057363987,
+            40.77579376683666
+          ],
+          "start_lat": 40.77579376683666,
+          "start_lng": -73.9762057363987,
+          "start_station_name": "Central Park West & W 72 St",
+          "trip_count": 4741
+        },
+        {
+          "end_coords": [
+            -73.981095,
+            40.714211
+          ],
+          "end_lat": 40.714211,
+          "end_lng": -73.981095,
+          "end_station_name": "Henry St & Grand St",
+          "line_width": 4.211859635954212,
+          "start_coords": [
+            -73.98802084,
+            40.7172274
+          ],
+          "start_lat": 40.7172274,
+          "start_lng": -73.98802084,
+          "start_station_name": "Norfolk St & Broome St",
+          "trip_count": 4489
+        },
+        {
+          "end_coords": [
+            -74.01322069,
+            40.71754834
+          ],
+          "end_lat": 40.71754834,
+          "end_lng": -74.01322069,
+          "end_station_name": "West St & Chambers St",
+          "line_width": 4.140551698254832,
+          "start_coords": [
+            -74.01322069,
+            40.71754834
+          ],
+          "start_lat": 40.71754834,
+          "start_lng": -74.01322069,
+          "start_station_name": "West St & Chambers St",
+          "trip_count": 4413
+        },
+        {
+          "end_coords": [
+            -74.01129573583603,
+            40.7277140777778
+          ],
+          "end_lat": 40.7277140777778,
+          "end_lng": -74.01129573583603,
+          "end_station_name": "Pier 40 - Hudson River Park",
+          "line_width": 4.138675173578533,
+          "start_coords": [
+            -74.01322069,
+            40.71754834
+          ],
+          "start_lat": 40.71754834,
+          "start_lng": -74.01322069,
+          "start_station_name": "West St & Chambers St",
+          "trip_count": 4411
+        },
+        {
+          "end_coords": [
+            -74.01047229766846,
+            40.71221958009051
+          ],
+          "end_lat": 40.71221958009051,
+          "end_lng": -74.01047229766846,
+          "end_station_name": "Vesey St & Church St",
+          "line_width": 4.133045599549634,
+          "start_coords": [
+            -74.0103006362915,
+            40.72019521437465
+          ],
+          "start_lat": 40.72019521437465,
+          "start_lng": -74.0103006362915,
+          "start_station_name": "North Moore St & Greenwich St",
+          "trip_count": 4405
+        },
+        {
+          "end_coords": [
+            -74.00451887,
+            40.74691959
+          ],
+          "end_lat": 40.74691959,
+          "end_lng": -74.00451887,
+          "end_station_name": "W 22 St & 10 Ave",
+          "line_width": 3.8018389941827735,
+          "start_coords": [
+            -73.99415556,
+            40.74173969
+          ],
+          "start_lat": 40.74173969,
+          "start_lng": -73.99415556,
+          "start_station_name": "W 21 St & 6 Ave",
+          "trip_count": 4052
+        },
+        {
+          "end_coords": [
+            -73.955613,
+            40.799484
+          ],
+          "end_lat": 40.799484,
+          "end_lng": -73.955613,
+          "end_station_name": "Central Park North & Adam Clayton Powell Blvd",
+          "line_width": 3.7990242071683245,
+          "start_coords": [
+            -73.955613,
+            40.799484
+          ],
+          "start_lat": 40.799484,
+          "start_lng": -73.955613,
+          "start_station_name": "Central Park North & Adam Clayton Powell Blvd",
+          "trip_count": 4049
+        },
+        {
+          "end_coords": [
+            -74.01486575603485,
+            40.69231660719192
+          ],
+          "end_lat": 40.69231660719192,
+          "end_lng": -74.01486575603485,
+          "end_station_name": "Soissons Landing",
+          "line_width": 3.7586789266278853,
+          "start_coords": [
+            -74.01675585121666,
+            40.68706579875912
+          ],
+          "start_lat": 40.68706579875912,
+          "start_lng": -74.01675585121666,
+          "start_station_name": "Yankee Ferry Terminal",
+          "trip_count": 4006
+        },
+        {
+          "end_coords": [
+            -74.01322069,
+            40.71754834
+          ],
+          "end_lat": 40.71754834,
+          "end_lng": -74.01322069,
+          "end_station_name": "West St & Chambers St",
+          "line_width": 3.7568024019515853,
+          "start_coords": [
+            -74.01129573583603,
+            40.7277140777778
+          ],
+          "start_lat": 40.7277140777778,
+          "start_lng": -74.01129573583603,
+          "start_station_name": "Pier 40 - Hudson River Park",
+          "trip_count": 4004
+        },
+        {
+          "end_coords": [
+            -74.01675585121666,
+            40.68706579875912
+          ],
+          "end_lat": 40.68706579875912,
+          "end_lng": -74.01675585121666,
+          "end_station_name": "Yankee Ferry Terminal",
+          "line_width": 3.7568024019515853,
+          "start_coords": [
+            -74.01486575603485,
+            40.69231660719192
+          ],
+          "start_lat": 40.69231660719192,
+          "start_lng": -74.01486575603485,
+          "start_station_name": "Soissons Landing",
+          "trip_count": 4004
+        },
+        {
+          "end_coords": [
+            -73.98802084,
+            40.7172274
+          ],
+          "end_lat": 40.7172274,
+          "end_lng": -73.98802084,
+          "end_station_name": "Norfolk St & Broome St",
+          "line_width": 3.732407581159692,
+          "start_coords": [
+            -73.981095,
+            40.714211
+          ],
+          "start_lat": 40.714211,
+          "start_lng": -73.981095,
+          "start_station_name": "Henry St & Grand St",
+          "trip_count": 3978
+        },
+        {
+          "end_coords": [
+            -73.97945255041122,
+            40.6610633719006
+          ],
+          "end_lat": 40.6610633719006,
+          "end_lng": -73.97945255041122,
+          "end_station_name": "West Drive & Prospect Park West",
+          "line_width": 3.70332144867705,
+          "start_coords": [
+            -73.97945255041122,
+            40.6610633719006
+          ],
+          "start_lat": 40.6610633719006,
+          "start_lng": -73.97945255041122,
+          "start_station_name": "West Drive & Prospect Park West",
+          "trip_count": 3947
+        },
+        {
+          "end_coords": [
+            -73.99915362,
+            40.74475148
+          ],
+          "end_lat": 40.74475148,
+          "end_lng": -73.99915362,
+          "end_station_name": "W 22 St & 8 Ave",
+          "line_width": 3.6695440045036594,
+          "start_coords": [
+            -74.00451887,
+            40.74691959
+          ],
+          "start_lat": 40.74691959,
+          "start_lng": -74.00451887,
+          "start_station_name": "W 22 St & 10 Ave",
+          "trip_count": 3911
+        },
+        {
+          "end_coords": [
+            -73.95987510681152,
+            40.78232260730881
+          ],
+          "end_lat": 40.78232260730881,
+          "end_lng": -73.95987510681152,
+          "end_station_name": "5 Ave & E 87 St",
+          "line_width": 3.6620379057984613,
+          "start_coords": [
+            -73.95987510681152,
+            40.78232260730881
+          ],
+          "start_lat": 40.78232260730881,
+          "start_lng": -73.95987510681152,
+          "start_station_name": "5 Ave & E 87 St",
+          "trip_count": 3903
+        },
+        {
+          "end_coords": [
+            -73.97782542,
+            40.7734066
+          ],
+          "end_lat": 40.7734066,
+          "end_lng": -73.97782542,
+          "end_station_name": "Central Park West & W 68 St",
+          "line_width": 3.5729029836742354,
+          "start_coords": [
+            -73.97782542,
+            40.7734066
+          ],
+          "start_lat": 40.7734066,
+          "start_lng": -73.97782542,
+          "start_station_name": "Central Park West & W 68 St",
+          "trip_count": 3808
+        },
+        {
+          "end_coords": [
+            -73.9477213,
+            40.7639089
+          ],
+          "end_lat": 40.7639089,
+          "end_lng": -73.9477213,
+          "end_station_name": "Motorgate",
+          "line_width": 3.559767310940139,
+          "start_coords": [
+            -73.9536,
+            40.757284
+          ],
+          "start_lat": 40.757284,
+          "start_lng": -73.9536,
+          "start_station_name": "Roosevelt Island Tramway",
+          "trip_count": 3794
+        },
+        {
+          "end_coords": [
+            -73.9536,
+            40.757284
+          ],
+          "end_lat": 40.757284,
+          "end_lng": -73.9536,
+          "end_station_name": "Roosevelt Island Tramway",
+          "line_width": 3.5006567836367046,
+          "start_coords": [
+            -73.9477213,
+            40.7639089
+          ],
+          "start_lat": 40.7639089,
+          "start_lng": -73.9477213,
+          "start_station_name": "Motorgate",
+          "trip_count": 3731
+        },
+        {
+          "end_coords": [
+            -73.96590294,
+            40.71285887
+          ],
+          "end_lat": 40.71285887,
+          "end_lng": -73.96590294,
+          "end_station_name": "S 4 St & Wythe Ave",
+          "line_width": 3.4612497654344154,
+          "start_coords": [
+            -73.95850939,
+            40.71745169
+          ],
+          "start_lat": 40.71745169,
+          "start_lng": -73.95850939,
+          "start_station_name": "N 6 St & Bedford Ave",
+          "trip_count": 3689
+        },
+        {
+          "end_coords": [
+            -73.9535166,
+            40.77140426
+          ],
+          "end_lat": 40.77140426,
+          "end_lng": -73.9535166,
+          "end_station_name": "1 Ave & E 78 St",
+          "line_width": 3.3974479264402326,
+          "start_coords": [
+            -73.95818491,
+            40.76500525
+          ],
+          "start_lat": 40.76500525,
+          "start_lng": -73.95818491,
+          "start_station_name": "1 Ave & E 68 St",
+          "trip_count": 3621
+        },
+        {
+          "end_coords": [
+            -73.95840793848038,
+            40.7687620293096
+          ],
+          "end_lat": 40.7687620293096,
+          "end_lng": -73.95840793848038,
+          "end_station_name": "2 Ave & E 72 St",
+          "line_width": 3.3252017264027023,
+          "start_coords": [
+            -73.95348296,
+            40.76663814
+          ],
+          "start_lat": 40.76663814,
+          "start_lng": -73.95348296,
+          "start_station_name": "E 72 St & York Ave",
+          "trip_count": 3544
+        },
+        {
+          "end_coords": [
+            -74.01322069,
+            40.71754834
+          ],
+          "end_lat": 40.71754834,
+          "end_lng": -74.01322069,
+          "end_station_name": "West St & Chambers St",
+          "line_width": 3.3139425783449052,
+          "start_coords": [
+            -74.00277668,
+            40.76087502
+          ],
+          "start_lat": 40.76087502,
+          "start_lng": -74.00277668,
+          "start_station_name": "12 Ave & W 40 St",
+          "trip_count": 3532
+        },
+        {
+          "end_coords": [
+            -74.0046073,
+            40.71273266
+          ],
+          "end_lat": 40.71273266,
+          "end_lng": -74.0046073,
+          "end_station_name": "Centre St & Chambers St",
+          "line_width": 3.282041658847814,
+          "start_coords": [
+            -74.0046073,
+            40.71273266
+          ],
+          "start_lat": 40.71273266,
+          "start_lng": -74.0046073,
+          "start_station_name": "Centre St & Chambers St",
+          "trip_count": 3498
+        },
+        {
+          "end_coords": [
+            -74.014847,
+            40.711444
+          ],
+          "end_lat": 40.711444,
+          "end_lng": -74.014847,
+          "end_station_name": "West St & Liberty St",
+          "line_width": 3.280165134171514,
+          "start_coords": [
+            -74.01677685,
+            40.70569254
+          ],
+          "start_lat": 40.70569254,
+          "start_lng": -74.01677685,
+          "start_station_name": "Little West St & 1 Pl",
+          "trip_count": 3496
+        },
+        {
+          "end_coords": [
+            -73.95856158,
+            40.77314236
+          ],
+          "end_lat": 40.77314236,
+          "end_lng": -73.95856158,
+          "end_station_name": "E 77 St & 3 Ave",
+          "line_width": 3.25858510039407,
+          "start_coords": [
+            -73.9535166,
+            40.77140426
+          ],
+          "start_lat": 40.77140426,
+          "start_lng": -73.9535166,
+          "start_station_name": "1 Ave & E 78 St",
+          "trip_count": 3473
+        },
+        {
+          "end_coords": [
+            -73.95840793848038,
+            40.7687620293096
+          ],
+          "end_lat": 40.7687620293096,
+          "end_lng": -73.95840793848038,
+          "end_station_name": "2 Ave & E 72 St",
+          "line_width": 3.2548320510414714,
+          "start_coords": [
+            -73.9535166,
+            40.77140426
+          ],
+          "start_lat": 40.77140426,
+          "start_lng": -73.9535166,
+          "start_station_name": "1 Ave & E 78 St",
+          "trip_count": 3469
+        },
+        {
+          "end_coords": [
+            -74.0103006362915,
+            40.72019521437465
+          ],
+          "end_lat": 40.72019521437465,
+          "end_lng": -74.0103006362915,
+          "end_station_name": "North Moore St & Greenwich St",
+          "line_width": 3.247325952336273,
+          "start_coords": [
+            -74.01047229766846,
+            40.71221958009051
+          ],
+          "start_lat": 40.71221958009051,
+          "start_lng": -74.01047229766846,
+          "start_station_name": "Vesey St & Church St",
+          "trip_count": 3461
+        },
+        {
+          "end_coords": [
+            -73.98864984512329,
+            40.72335597960796
+          ],
+          "end_lat": 40.72335597960796,
+          "end_lng": -73.98864984512329,
+          "end_station_name": "E 1 St & 1 Ave",
+          "line_width": 3.2088571964721337,
+          "start_coords": [
+            -73.98085795,
+            40.7208736
+          ],
+          "start_lat": 40.7208736,
+          "start_lng": -73.98085795,
+          "start_station_name": "E 2 St & Avenue C",
+          "trip_count": 3420
+        },
+        {
+          "end_coords": [
+            -73.9786517,
+            40.7829391
+          ],
+          "end_lat": 40.7829391,
+          "end_lng": -73.9786517,
+          "end_station_name": "Amsterdam Ave & W 79 St",
+          "line_width": 3.1985363107524862,
+          "start_coords": [
+            -73.98093044757842,
+            40.77966809007312
+          ],
+          "start_lat": 40.77966809007312,
+          "start_lng": -73.98093044757842,
+          "start_station_name": "Amsterdam Ave & W 73 St",
+          "trip_count": 3409
+        },
+        {
+          "end_coords": [
+            -74.00831580162048,
+            40.74198159994023
+          ],
+          "end_lat": 40.74198159994023,
+          "end_lng": -74.00831580162048,
+          "end_station_name": "10 Ave & W 14 St",
+          "line_width": 3.1750797522987426,
+          "start_coords": [
+            -74.01322069,
+            40.71754834
+          ],
+          "start_lat": 40.71754834,
+          "start_lng": -74.01322069,
+          "start_station_name": "West St & Chambers St",
+          "trip_count": 3384
+        },
+        {
+          "end_coords": [
+            -73.95987510681152,
+            40.78232260730881
+          ],
+          "end_lat": 40.78232260730881,
+          "end_lng": -73.95987510681152,
+          "end_station_name": "5 Ave & E 87 St",
+          "line_width": 3.1591292925501966,
+          "start_coords": [
+            -73.97634151,
+            40.76590936
+          ],
+          "start_lat": 40.76590936,
+          "start_lng": -73.97634151,
+          "start_station_name": "Central Park S & 6 Ave",
+          "trip_count": 3367
+        },
+        {
+          "end_coords": [
+            -73.95411749,
+            40.74232744
+          ],
+          "end_lat": 40.74232744,
+          "end_lng": -73.95411749,
+          "end_station_name": "Vernon Blvd & 50 Ave",
+          "line_width": 3.1394257834490524,
+          "start_coords": [
+            -73.95284,
+            40.73555
+          ],
+          "start_lat": 40.73555,
+          "start_lng": -73.95284,
+          "start_station_name": "McGuinness Blvd & Eagle St",
+          "trip_count": 3346
+        },
+        {
+          "end_coords": [
+            -73.98658032,
+            40.75513557
+          ],
+          "end_lat": 40.75513557,
+          "end_lng": -73.98658032,
+          "end_station_name": "Broadway & W 41 St",
+          "line_width": 3.039969975605179,
+          "start_coords": [
+            -73.98658032,
+            40.75513557
+          ],
+          "start_lat": 40.75513557,
+          "start_lng": -73.98658032,
+          "start_station_name": "Broadway & W 41 St",
+          "trip_count": 3240
+        },
+        {
+          "end_coords": [
+            -74.01322069,
+            40.71754834
+          ],
+          "end_lat": 40.71754834,
+          "end_lng": -74.01322069,
+          "end_station_name": "West St & Chambers St",
+          "line_width": 3.03527866391443,
+          "start_coords": [
+            -74.00831580162048,
+            40.74198159994023
+          ],
+          "start_lat": 40.74198159994023,
+          "start_lng": -74.00831580162048,
+          "start_station_name": "10 Ave & W 14 St",
+          "trip_count": 3235
+        },
+        {
+          "end_coords": [
+            -73.981095,
+            40.714211
+          ],
+          "end_lat": 40.714211,
+          "end_lng": -73.981095,
+          "end_station_name": "Henry St & Grand St",
+          "line_width": 3.013698630136986,
+          "start_coords": [
+            -73.9870295,
+            40.71559509
+          ],
+          "start_lat": 40.71559509,
+          "start_lng": -73.9870295,
+          "start_station_name": "Clinton St & Grand St",
+          "trip_count": 3212
+        },
+        {
+          "end_coords": [
+            -73.99415556,
+            40.74173969
+          ],
+          "end_lat": 40.74173969,
+          "end_lng": -73.99415556,
+          "end_station_name": "W 21 St & 6 Ave",
+          "line_width": 2.9705385625820977,
+          "start_coords": [
+            -74.00451887,
+            40.74691959
+          ],
+          "start_lat": 40.74691959,
+          "start_lng": -74.00451887,
+          "start_station_name": "W 22 St & 10 Ave",
+          "trip_count": 3166
+        },
+        {
+          "end_coords": [
+            -74.00831580162048,
+            40.74198159994023
+          ],
+          "end_lat": 40.74198159994023,
+          "end_lng": -74.00831580162048,
+          "end_station_name": "10 Ave & W 14 St",
+          "line_width": 2.969600300243948,
+          "start_coords": [
+            -74.00277668,
+            40.76087502
+          ],
+          "start_lat": 40.76087502,
+          "start_lng": -74.00277668,
+          "start_station_name": "12 Ave & W 40 St",
+          "trip_count": 3165
+        },
+        {
+          "end_coords": [
+            -74.0021163,
+            40.75594159
+          ],
+          "end_lat": 40.75594159,
+          "end_lng": -74.0021163,
+          "end_station_name": "W 34 St & 11 Ave",
+          "line_width": 2.9555263651717016,
+          "start_coords": [
+            -73.99884222,
+            40.76030096
+          ],
+          "start_lat": 40.76030096,
+          "start_lng": -73.99884222,
+          "start_station_name": "11 Ave & W 41 St",
+          "trip_count": 3150
+        },
+        {
+          "end_coords": [
+            -73.9790689945221,
+            40.7667405590595
+          ],
+          "end_lat": 40.7667405590595,
+          "end_lng": -73.9790689945221,
+          "end_station_name": "7 Ave & Central Park South",
+          "line_width": 2.941452430099456,
+          "start_coords": [
+            -73.97634151,
+            40.76590936
+          ],
+          "start_lat": 40.76590936,
+          "start_lng": -73.97634151,
+          "start_station_name": "Central Park S & 6 Ave",
+          "trip_count": 3135
+        },
+        {
+          "end_coords": [
+            -73.96165072917938,
+            40.72036775298455
+          ],
+          "end_lat": 40.72036775298455,
+          "end_lng": -73.96165072917938,
+          "end_station_name": "Kent Ave & N 7 St",
+          "line_width": 2.922687183336461,
+          "start_coords": [
+            -73.95779,
+            40.72906
+          ],
+          "start_lat": 40.72906,
+          "start_lng": -73.95779,
+          "start_station_name": "Milton St & Franklin St",
+          "trip_count": 3115
+        }
+      ],
+      "getSourceColor": [
+        0,
+        128,
+        255,
+        153
+      ],
+      "getSourcePosition": "@@=start_coords",
+      "getTargetColor": [
+        255,
+        0,
+        80,
+        153
+      ],
+      "getTargetPosition": "@@=end_coords",
+      "getWidth": 3.0,
+      "id": "0b6713fa-d894-4ff9-a3c5-7b0e959e5d81",
+      "pickable": true
+    }
+  ],
+  "mapProvider": "carto",
+  "mapStyle": "https://basemaps.cartocdn.com/gl/dark-matter-gl-style/style.json",
+  "views": [
+    {
+      "@@type": "MapView",
+      "controller": true
+    }
+  ]
+};
+    const tooltip = {'text': '{start_station_name} → {end_station_name}\nTrips: {trip_count}'};
+    const customLibraries = null;
+    const configuration = null;
+
+    const deckInstance = createDeck({
+                  container,
+      jsonInput,
+      tooltip,
+      customLibraries,
+      configuration
+    });
+
+  </script>
+</html>

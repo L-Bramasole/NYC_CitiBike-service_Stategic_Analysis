@@ -1,0 +1,10 @@
+Python 3.10.19
+pandas                    2.3.3
+numpy                     2.2.6
+matplotlib                3.10.8
+plotly                    6.5.0
+numerize                  0.12
+streamlit                 1.52.2
+pydeck                    0.9.1
+jupyterlab_widgets        3.0.16
+
