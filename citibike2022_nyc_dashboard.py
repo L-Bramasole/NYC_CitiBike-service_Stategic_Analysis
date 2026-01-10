@@ -310,48 +310,41 @@ else:
 
     st.markdown("## 🛠 Action Plan: Fleet & Station Optimization")
 
-    st.markdown("### 1. The Rebalancing Roadmap")
+    st.markdown("### 1. Move Bikes at the Right Times")
 
-    st.markdown(
-        """
-| **Timeframe**     | **Action**      | **Target Locations** |
-|-------------------|-----------------|-----------------------|
-| Mon–Fri (AM)      | Clear Docks     | Midtown / Financial District (to accept incoming commuters) |
-| Mon–Fri (PM)      | Refill Docks    | Residential / Transit Hubs (for the 5:00 PM home‑bound rush) |
-| Weekend           | Pivot to Loops  | Shift idle “Office” bikes to Central Park & Waterfront hubs |
-"""
-    )
+    st.markdown("- Weekday mornings: Clear docks in Midtown and the Financial District so commuters can park bikes."
+                "- Weekday evenings: Refill docks in residential areas and transit hubs for the ride home."
+                "- Weekends: Shift extra bikes to Central Park, the Hudson River, and Roosevelt Island for recreational demand."
+                "- Midnight–6 a.m.: Do all heavy rebalancing and repairs when riders aren’t using the system."
+                
+               )
 
-    st.markdown("### 2. Key Operational Shifts")
+    st.markdown("### 2. Treat Stations Differently")
 
-    st.markdown(
-        """
-- **Station “Tiering”**: Stop treating all stations the same.
-    - **Tier 1 (High Churn):** West St & Chambers — requires constant flow monitoring.
-    - **Tier 2 (Round‑Trip Hubs):** Central Park — requires on‑site mechanics, not more bikes.
-- **The “Zero‑Impact” Window:** Conduct all heavy logistics between **00:00–06:00** to avoid disrupting the 8:00 AM peak.
-"""
-    )
+    st.markdown("Not all stations work the same, so they shouldn’t be managed the same."
+                "- Busy commuter stations (like West & Chambers): Need fast bike turnover and frequent checks."
+                "- Recreational loop stations (like Central Park): Need mechanics on-site more than extra bikes, because bikes return to the same place."
+                "- Regular neighborhood stations: Adjust bike numbers based on weekday vs. weekend patterns."
+               )
 
-    st.markdown("### 3. Data Gaps (The “Next Steps”)")
+    st.markdown("### 3. Fix Data Gaps to Improve Operations")
 
-    st.markdown(
-        """
-To reach full operational efficiency, the following metrics are required:
-
-- **Net Flow:** (Starts − Ends) to predict where bikes naturally accumulate.
-- **Lost Demand:** Tracking “Full Dock” or “Empty Dock” errors to identify revenue loss.
-- **Battery Status:** Integrating E‑bike charge levels into the relocation path.
-"""
-    )
+    st.markdown("- 76% of routes happen only once.This spreads bikes across many low‑use routes, causing shortages at popular stations."
+                "→ Use Net Flow (starts minus ends) to track where bikes pile up or disappear."
+                "- ~37,000 trips have missing end‑station coordinates. These “lost” trips hide real demand and make rebalancing less accurate."
+                "→ Add checks to ensure every trip closes with a valid end station."
+                "- Track lost demand. Count “full dock” and “empty dock” events to measure missed revenue."
+                "- Include e‑bike battery levels in relocation planning.
+                )
 
     st.markdown("### 💡 Bottom Line")
 
     st.markdown(
         """
-> *“We have enough bikes; they are simply in the wrong place at the wrong time.  
-> By aligning our logistics with the 08:00/17:00 weekday peaks and the 50% weekend round‑trip trend,  
-> we can maximize revenue without increasing capital costs.”*
+> *“Citi Bike doesn’t need more bikes — it needs bikes in the right place at the right time."
+"If you want, I can also turn this into a slide‑ready bullet list or a spoken script."
+"> By aligning our logistics with the 08:00/17:00 weekday peaks and the 50% weekend round‑trip trend,  
+"> we can maximize revenue without increasing capital costs.”*
 """
     )
 
