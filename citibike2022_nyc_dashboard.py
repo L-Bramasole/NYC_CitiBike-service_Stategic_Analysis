@@ -334,7 +334,7 @@ else:
                 "- ~37,000 trips have missing end‑station coordinates. These “lost” trips hide real demand and make rebalancing less accurate."
                 "→ Add checks to ensure every trip closes with a valid end station."
                 "- Track lost demand. Count “full dock” and “empty dock” events to measure missed revenue."
-                "- Include e‑bike battery levels in relocation planning.
+                "- Include e‑bike battery levels in relocation planning."
                 )
 
     st.markdown("### 💡 Bottom Line")
