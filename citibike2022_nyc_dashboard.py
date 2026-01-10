@@ -312,30 +312,39 @@ else:
 
     st.markdown("### 1. Move Bikes at the Right Times")
 
-    st.markdown("- Weekday mornings: Clear docks in Midtown and the Financial District so commuters can park bikes."
-                "- Weekday evenings: Refill docks in residential areas and transit hubs for the ride home."
-                "- Weekends: Shift extra bikes to Central Park, the Hudson River, and Roosevelt Island for recreational demand."
-                "- Midnight–6 a.m.: Do all heavy rebalancing and repairs when riders aren’t using the system."
-                
-               )
+    st.markdown("""
+**Weekday mornings:** Clear docks in Midtown and the Financial District so commuters can park bikes.
+
+**Weekday evenings:** Refill docks in residential areas and transit hubs for the ride home.
+
+**Weekends:** Shift extra bikes to Central Park, the Hudson River, and Roosevelt Island for recreational demand.
+
+**Midnight–6 a.m.:** Do all heavy rebalancing and repairs when riders aren’t using the system.
+""")
 
     st.markdown("### 2. Treat Stations Differently")
 
-    st.markdown("Not all stations work the same, so they shouldn’t be managed the same."
-                "- Busy commuter stations (like West & Chambers): Need fast bike turnover and frequent checks."
-                "- Recreational loop stations (like Central Park): Need mechanics on-site more than extra bikes, because bikes return to the same place."
-                "- Regular neighborhood stations: Adjust bike numbers based on weekday vs. weekend patterns."
-               )
+    st.markdown("""
+Not all stations work the same, so they shouldn’t be managed the same.
+
+- **Busy commuter stations** (like West & Chambers): Need fast bike turnover and frequent checks.
+- **Recreational loop stations** (like Central Park): Need mechanics on-site more than extra bikes, because bikes return to the same place.
+- **Regular neighborhood stations:** Adjust bike numbers based on weekday vs. weekend patterns.
+""")
 
     st.markdown("### 3. Fix Data Gaps to Improve Operations")
 
-    st.markdown("- 76% of routes happen only once.This spreads bikes across many low‑use routes, causing shortages at popular stations."
-                "→ Use Net Flow (starts minus ends) to track where bikes pile up or disappear."
-                "- ~37,000 trips have missing end‑station coordinates. These “lost” trips hide real demand and make rebalancing less accurate."
-                "→ Add checks to ensure every trip closes with a valid end station."
-                "- Track lost demand. Count “full dock” and “empty dock” events to measure missed revenue."
-                "- Include e‑bike battery levels in relocation planning."
-                )
+    st.markdown("""
+- **75% of routes happen only once.** This spreads bikes across many low‑use routes, causing shortages at popular stations.  
+  → Use Net Flow (starts minus ends) to track where bikes pile up or disappear.
+
+- **~37,000 trips have missing end‑station coordinates.** These “lost” trips hide real demand and make rebalancing less accurate.  
+  → Add checks to ensure every trip closes with a valid end station.
+
+- **Track lost demand.** Count “full dock” and “empty dock” events to measure missed revenue.
+
+- **Include e‑bike battery levels** in relocation planning.
+""")
 
     st.markdown("### 💡 Bottom Line")
 
