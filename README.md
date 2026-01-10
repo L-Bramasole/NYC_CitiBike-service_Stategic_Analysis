@@ -1,7 +1,9 @@
-# 🚲 CitiBike NYC 2022 – Data Analysis & Operational Insights  
-*A data‑driven exploration of station demand, route patterns, and weather effects to support smarter fleet allocation.*
+# 🚲 CitiBike NYC 2022 – Data Analysis & Operational Insights 
 
----
+**A data‑driven exploration of station demand, route patterns, and weather effects to support smarter fleet allocation.**
+
+All tasks were completed using Python 3.14 and Python10.required libraries for streamlit dashbord are listed in requirements.txt.
+
 
 ## 📌 Project Overview  
 Citi Bike faces a recurring challenge: **customers frequently encounter empty or full stations**, especially during peak commuting hours. This project analyzes **all CitiBike trips from 2022**, enriched with **NOAA weather data**, to uncover the root causes of these imbalances and provide a foundation for smarter fleet distribution and station planning.
@@ -29,20 +31,20 @@ NOAA’s API service https://www.noaa.gov/
 ## 🧹 Data Preparation  
 ### CitiBike Data  
 - Loaded and concatenated all monthly files  
-- Converted timestamps to datetime  
+- Converted timestamps to datetime, extracted durations and cleaned negative & extreme values.
 - Extracted date, month, day of week, and ride duration  
-- Standardized station names and IDs  
+- cleaned missing coordinates values and restored or cleaned station names from coordinates
 - Created route identifiers (start–end pairs)
 
 ### Weather Data  
 - Queried NOAA API for station **GHCND:USW00014732**  
-- Cleaned and converted temperature units  
+- Cleaned and converted temperature and percepitation units  
 - Aggregated to daily and monthly averages 
 - Merged with Citibie daily rides 
 
 ### Final Data Tables
-Several cleaned and aggrigated tables were generated to answer questions separatly and plot figures.
-all can be found under Tables and Figure folder of this repositry.
+Data set was devided based on questions, cleaned separatly and aggrigated accordingly.
+generated tables can be found under Figure_Tables folder of this repositry.
 Note: Due to big size of the original dataset, it is not uploaded into this repositry.
 
 ---
