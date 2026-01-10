@@ -26,8 +26,8 @@ st.title("NewYork Citi Bikes 2022-Strategy Dashboard")
 # Define side bar
 st.sidebar.title("Aspect Selector")
 page = st.sidebar.selectbox('Select an aspect of the analysis',
-  ["Objectives","Most popular stations",
-   "Weather & Time Dynamics",
+  ["Objectives",   "Weather & Time Dynamics",
+  "Most popular stations",
    "Top20 Routes with Interactive map", "Recommendations"])
 
 # ---------------------------------------------------------
@@ -86,7 +86,77 @@ this challenge.
         "https://github.com/L-Bramasole/NYC_CitiBike-service_Stategic_Analysis.git"
     )
 
- ########## Create Most popular stations page ################
+## Weather component and bike usage Page ###############################
+
+elif page == 'Weather & Time Dynamics':
+    line1 = make_subplots(specs=[[{"secondary_y": True}]])
+    line1.add_trace(
+    go.Scatter(
+        x=rides_temp['date'], 
+        y=rides_temp['ride_count'], 
+        name='Daily Bike Rides',
+        marker={'color': 'teal'}  
+    ),
+    secondary_y=False
+    )
+    line1.add_trace(
+    go.Scatter(
+        x=rides_temp['date'], 
+        y=rides_temp['tavg'], 
+        name='Daily Temperature',
+        marker={'color': 'white'}  
+    ),
+    secondary_y=True
+    )
+    line1.update_layout(
+    width=900,   
+    height=600,    
+    title="Bike Rides correlates with Tempratures all over the year",
+    yaxis_title="Daily Bike Rides",
+    yaxis2_title="Daily Temperature"
+    )
+    st.plotly_chart(line1, width="stretch")
+    st.markdown("Ridership shows a near-perfect positive correlation with temperature. Demand is seasonal, scaling up from Spring, peaking in Summer, and retreating in Winter, making weather the primary predictor of system load.")
+
+    ### Heatmap for rides volume over the week days aroud the clock ##
+
+    heatmap2 = go.Figure(
+        data=go.Heatmap(
+        z=weekday_hour.values,
+        x=weekday_hour.columns,
+        y=weekday_hour.index,
+        colorscale="PuBuGn",
+        showscale=True
+    )
+    )
+
+    heatmap2.update_layout(
+        title="Rides volume over the week days around the clock",
+        xaxis_title="Weekday",
+        yaxis_title="Hour of the day",
+        width=900,
+        height=750
+    )
+
+    st.plotly_chart(heatmap2, width="stretch")
+
+    st.markdown(
+        "**Weekday Utility**: Usage is strictly governed by the 9‑to‑5 workday, with sharp spikes "
+        "at 08:00 and 17:00–18:00. These hours represent the highest strain on dock availability "
+        "and require maximum fleet deployment."
+    )
+
+    st.markdown(
+        "**Weekend Leisure**: The pattern shifts to a broad plateau between 10:00 and 17:00, "
+        "indicating a move from time‑sensitive commuting to flexible, recreational travel."
+    )
+
+    st.markdown(
+        "**Maintenance Window**: The universal ridership \"blackout\" between 00:00 and 06:00 "
+        "provides a critical daily window for system‑wide rebalancing and repairs with zero user impact."
+    )
+
+########## Create Most popular stations page ################
                    
 elif page == 'Most popular stations':
 
@@ -161,77 +231,6 @@ elif page == 'Most popular stations':
     )
 
     
-## Weather component and bike usage Page ###############################
-
-elif page == 'Weather & Time Dynamics':
-    line1 = make_subplots(specs=[[{"secondary_y": True}]])
-    line1.add_trace(
-    go.Scatter(
-        x=rides_temp['date'], 
-        y=rides_temp['ride_count'], 
-        name='Daily Bike Rides',
-        marker={'color': 'teal'}  
-    ),
-    secondary_y=False
-    )
-    line1.add_trace(
-    go.Scatter(
-        x=rides_temp['date'], 
-        y=rides_temp['tavg'], 
-        name='Daily Temperature',
-        marker={'color': 'white'}  
-    ),
-    secondary_y=True
-    )
-    line1.update_layout(
-    width=900,   
-    height=600,    
-    title="Bike Rides correlates with Tempratures all over the year",
-    yaxis_title="Daily Bike Rides",
-    yaxis2_title="Daily Temperature"
-    )
-    st.plotly_chart(line1, width="stretch")
-    st.markdown("Ridership shows a near-perfect positive correlation with temperature. Demand is seasonal, scaling up from Spring, peaking in Summer, and retreating in Winter, making weather the primary predictor of system load.")
-
-    ### Heatmap for rides volume over the week days aroud the clock ##
-
-    heatmap2 = go.Figure(
-        data=go.Heatmap(
-        z=weekday_hour.values,
-        x=weekday_hour.columns,
-        y=weekday_hour.index,
-        colorscale="PuBuGn",
-        showscale=True
-    )
-    )
-
-    heatmap2.update_layout(
-        title="Rides volume over the week days around the clock",
-        xaxis_title="Weekday",
-        yaxis_title="Hour of the day",
-        width=900,
-        height=750
-    )
-
-    st.plotly_chart(heatmap2, width="stretch")
-
-    st.markdown(
-        "**Weekday Utility**: Usage is strictly governed by the 9‑to‑5 workday, with sharp spikes "
-        "at 08:00 and 17:00–18:00. These hours represent the highest strain on dock availability "
-        "and require maximum fleet deployment."
-    )
-
-    st.markdown(
-        "**Weekend Leisure**: The pattern shifts to a broad plateau between 10:00 and 17:00, "
-        "indicating a move from time‑sensitive commuting to flexible, recreational travel."
-    )
-
-    st.markdown(
-        "**Maintenance Window**: The universal ridership \"blackout\" between 00:00 and 06:00 "
-        "provides a critical daily window for system‑wide rebalancing and repairs with zero user impact."
-    )
-
-
 ### Interactive map with Top Routs  Page #####################################
 elif page == 'Top20 Routes with Interactive map': 
 
