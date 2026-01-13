@@ -6,9 +6,76 @@ All tasks were completed using Python 3.14 and Python10.required libraries for s
 
 
 ## 📌 Project Overview  
-Citi Bike faces a recurring challenge: **customers frequently encounter empty or full stations**, especially during peak commuting hours. This project analyzes **all CitiBike trips from 2022**, enriched with **NOAA weather data**, to uncover the root causes of these imbalances and provide a foundation for smarter fleet distribution and station planning.
+Citi Bike faces a recurring challenge: **customers frequently encounter empty or full stations**, especially during peak commuting hours. This project analyzes **all CitiBike trips from 2022**, enriched with **NOAA weather data**, to uncover the root causes of these imbalances and provide a foundation for smarter fleet distribution and station planning. 
 
 Using more than **20 million trip records**, the analysis reveals how station popularity, route patterns, and environmental factors shape bike‑sharing demand across New York City.
+---
+## 📊 Dashboard Structure  
+https://nyccitibike-servicestategicanalysis-k3ljnwx4lcafyy7nnbvemz.streamlit.app
+
+The interactive dashboard is divided into **four sections**, each answering a core operational question:
+
+- **Most popular stations in 2022**  
+- **Weather & Time Dynamics**  
+- **Top 20 Routes (Interactive Map)**  
+- **Summary & Recommendations**
+
+---
+# 🚀 Running the Dashboard  
+
+To launch the interactive Streamlit dashboard:
+
+```bash
+pip install -r requirements.txt
+streamlit run citibike2022_nyc_dashboard.py
+```
+
+## ❓ Key Questions  
+
+### 1. Most Popular Stations  
+- Which stations have the highest number of departures?  
+- How does station usage vary by day of week?  
+- How do weekday vs. weekend patterns differ?
+
+### 2. Monthly Trip Trends + Weather Influence  
+- How does ridership change across the year?  
+- How strongly does temperature correlate with trip volume?
+
+### 3. Most Popular Routes  
+- Which start–end station pairs are used most frequently?  
+- What do these routes reveal about commuter flows?
+
+### 4. Station Distribution Across NYC  
+- Are stations evenly distributed?  
+- Where are the geographic gaps?
+
+### 5. Weather + Daily Ridership  
+- How do temperature and precipitation affect daily demand?
+
+---
+# ⭐ Results Highlights  
+
+### 🔥 1. Station Demand Is Highly Concentrated  
+A small cluster of stations — primarily in **Midtown, Lower Manhattan, and transit‑dense areas** — account for a disproportionately large share of departures.  
+These stations show strong **AM/PM commuter peaks**, confirming their role in daily work travel.
+
+### 🌤 2. Weather Strongly Shapes Ridership  
+- Ridership rises sharply with temperature, peaking in **June–September**  
+- Cold months (Jan–Feb) show the lowest usage  
+- Daily analysis confirms a clear **positive correlation** between temperature and trip volume
+
+### 🗺 3. Route Patterns Reveal Commuter Corridors  
+The top 20 routes form clear directional flows:  
+- **Residential → Business districts (AM)**  
+- **Business districts → Residential (PM)**  
+Weekend patterns shift toward **leisure loops** around parks and waterfronts.
+
+### 📍 4. Station Distribution Shows Coverage Gaps  
+While Manhattan is dense with stations, parts of **Queens, Brooklyn, and the Bronx** show sparse coverage, suggesting opportunities for expansion.
+
+### 📈 5. Extreme Skew in Route Frequency  
+75% of unique routes occur **only once**, while a small number of routes repeat thousands of times — a classic long‑tail distribution.  
+This highlights the importance of focusing operational planning on **high‑frequency corridors**.
 
 ---
 
@@ -49,73 +116,6 @@ Note: Due to big size of the original dataset, it is not uploaded into this repo
 
 ---
 
-## ❓ Key Questions  
-
-### 1. Most Popular Stations  
-- Which stations have the highest number of departures?  
-- How does station usage vary by day of week?  
-- How do weekday vs. weekend patterns differ?
-
-### 2. Monthly Trip Trends + Weather Influence  
-- How does ridership change across the year?  
-- How strongly does temperature correlate with trip volume?
-
-### 3. Most Popular Routes  
-- Which start–end station pairs are used most frequently?  
-- What do these routes reveal about commuter flows?
-
-### 4. Station Distribution Across NYC  
-- Are stations evenly distributed?  
-- Where are the geographic gaps?
-
-### 5. Weather + Daily Ridership  
-- How do temperature and precipitation affect daily demand?
-
----
-
-## 📊 Dashboard Structure  
-https://nyccitibike-servicestategicanalysis-k3ljnwx4lcafyy7nnbvemz.streamlit.app
-
-The interactive dashboard is divided into **four sections**, each answering a core operational question:
-
-- **Most popular stations in 2022**  
-- **Weather & Time Dynamics**  
-- **Top 20 Routes (Interactive Map)**  
-- **Summary & Recommendations**
-
----
-# 🚀 Running the Dashboard  
-
-To launch the interactive Streamlit dashboard:
-
-```bash
-pip install -r requirements.txt
-streamlit run citibike2022_nyc_dashboard.py
-```
-
-# ⭐ Results Highlights  
-
-### 🔥 1. Station Demand Is Highly Concentrated  
-A small cluster of stations — primarily in **Midtown, Lower Manhattan, and transit‑dense areas** — account for a disproportionately large share of departures.  
-These stations show strong **AM/PM commuter peaks**, confirming their role in daily work travel.
-
-### 🌤 2. Weather Strongly Shapes Ridership  
-- Ridership rises sharply with temperature, peaking in **June–September**  
-- Cold months (Jan–Feb) show the lowest usage  
-- Daily analysis confirms a clear **positive correlation** between temperature and trip volume
-
-### 🗺 3. Route Patterns Reveal Commuter Corridors  
-The top 20 routes form clear directional flows:  
-- **Residential → Business districts (AM)**  
-- **Business districts → Residential (PM)**  
-Weekend patterns shift toward **leisure loops** around parks and waterfronts.
-
-### 📍 4. Station Distribution Shows Coverage Gaps  
-While Manhattan is dense with stations, parts of **Queens, Brooklyn, and the Bronx** show sparse coverage, suggesting opportunities for expansion.
-
-### 📈 5. Extreme Skew in Route Frequency  
-75% of unique routes occur **only once**, while a small number of routes repeat thousands of times — a classic long‑tail distribution.  
-This highlights the importance of focusing operational planning on **high‑frequency corridors**.
 
 ---
 
