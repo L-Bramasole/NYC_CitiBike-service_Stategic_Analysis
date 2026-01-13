@@ -289,7 +289,7 @@ elif page == 'Most popular stations':
         )
 
     # ---------------- TAB 2 ---------------- #
-    elif page == 'Most popular stations':
+elif page == 'Most popular stations':
 
     # ---- Custom CSS for Tabs ----
     st.markdown("""
